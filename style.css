@@ -3,16 +3,19 @@
     padding: 0;
 }
 
+header, main{
+    text-align: center;
+}
+
 #color-palete{
-    background-color: blueviolet;
     text-align: center;
     color: white;
 }
 
 .color{
     border: solid 1px black;
-    width: 100px;
-    height: 100px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
 }
 
@@ -31,3 +34,16 @@
 #green{
     background-color: green;
 }
+
+.pixel{
+    width: 40px;
+    height: 40px;
+    border: solid 1px black;
+    display: inline-block;
+    background-color: white;
+}
+
+.linha{
+    height: 40px;
+}
+
