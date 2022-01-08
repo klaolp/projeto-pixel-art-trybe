@@ -1,1 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 
+#color-palete{
+    background-color: blueviolet;
+    text-align: center;
+    color: white;
+}
+
+.color{
+    border: solid 1px black;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+#black{
+    text-align: center;
+    background-color: black;
+}
+
+#red{
+    background-color: red;
+}
+#blue{
+    background-color: blue;
+}
+
+#green{
+    background-color: green;
+}
