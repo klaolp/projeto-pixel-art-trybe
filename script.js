@@ -18,3 +18,22 @@ function createBoard () {
 }
 
 createBoard();
+
+function selecionarCor()
+{
+    let click = document.getElementsByClassName("color");
+    
+    
+    for(let i = 0; i < click.length; i += 1) {
+        click[i].addEventListener("click", recebeClick);
+    }
+    
+    function recebeClick(eventoDeOrigem) {
+       let cor = (eventoDeOrigem.target);
+       let anterior = document.getElementsByClassName("selected");
+       anterior[0].className = "color";
+       cor.className = "color selected";
+    }
+}
+
+selecionarCor();
