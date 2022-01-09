@@ -23,7 +23,6 @@ function selecionarCor()
 {
     let click = document.getElementsByClassName("color");
     
-    
     for(let i = 0; i < click.length; i += 1) {
         click[i].addEventListener("click", recebeClick);
     }
@@ -37,3 +36,20 @@ function selecionarCor()
 }
 
 selecionarCor();
+
+function adicionaCor () {
+    let quadradinhos = document.getElementsByClassName("pixel");
+
+    for(let i = 0; i < quadradinhos.length; i += 1) {
+        quadradinhos[i].addEventListener("click", clicado);
+    }
+
+    function clicado(eventoDeOrigem) {
+        let quadradinho = (eventoDeOrigem.target);
+        let cor = document.getElementsByClassName("color selected")[0].id;
+
+        quadradinho.style.backgroundColor = cor;
+    }
+}
+
+adicionaCor();
