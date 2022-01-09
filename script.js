@@ -53,3 +53,14 @@ function adicionaCor () {
 }
 
 adicionaCor();
+
+let cls = document.getElementById("clear-board");
+cls.addEventListener("click", limparPixels);
+
+function limparPixels(){
+    let quadradinhos = document.getElementsByClassName("pixel");
+
+    for(let i = 0; i < quadradinhos.length; i += 1) {
+        quadradinhos[i].style.backgroundColor = "white";
+    }
+}
