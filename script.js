@@ -1,16 +1,15 @@
-function createBoard () {
-
+function createBoard() {
     let quadro = document.getElementById("pixel-board");
 
     for(let i = 0; i < 5; i += 1)
     {
-        let linha = document.createElement("div");
-        linha.className = ("linha");
+        let linha = document.createElement('div');
+        linha.className = ('linha');
 
-        for(let j = 0; j < 5; j += 1)
+        for (let j = 0; j < 5; j += 1)
         {
-            let quad = document.createElement("div");
-            quad.className = "pixel";
+            let quad = document.createElement('div');
+            quad.className = 'pixel';
             linha.appendChild(quad);
         }
         quadro.appendChild(linha);
@@ -19,25 +18,24 @@ function createBoard () {
 
 createBoard();
 
-function selecionarCor()
-{
-    let click = document.getElementsByClassName("color");
+function selecionarCor() {
+    let click = document.getElementsByClassName('color');
     
     for(let i = 0; i < click.length; i += 1) {
-        click[i].addEventListener("click", recebeClick);
+        click[i].addEventListener('click', recebeClick);
     }
     
     function recebeClick(eventoDeOrigem) {
        let cor = (eventoDeOrigem.target);
-       let anterior = document.getElementsByClassName("selected");
-       anterior[0].className = "color";
-       cor.className = "color selected";
+       let anterior = document.getElementsByClassName('selected');
+       anterior[0].className = 'color';
+       cor.className = 'color selected';
     }
 }
 
 selecionarCor();
 
-function adicionaCor () {
+function adicionaCor() {
     let quadradinhos = document.getElementsByClassName("pixel");
 
     for(let i = 0; i < quadradinhos.length; i += 1) {
@@ -57,10 +55,10 @@ adicionaCor();
 let cls = document.getElementById("clear-board");
 cls.addEventListener("click", limparPixels);
 
-function limparPixels(){
-    let quadradinhos = document.getElementsByClassName("pixel");
+function limparPixels() {
+    let quadradinhos = document.getElementsByClassName('pixel');
 
     for(let i = 0; i < quadradinhos.length; i += 1) {
-        quadradinhos[i].style.backgroundColor = "white";
+        quadradinhos[i].style.backgroundColor = 'white';
     }
 }

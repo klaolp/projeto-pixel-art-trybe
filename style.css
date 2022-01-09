@@ -1,49 +1,49 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-header, main{
-    text-align: center;
+header , main {
+  text-align: center;
 }
 
-#color-palete{
-    text-align: center;
-    color: white;
+#color-palete {
+  text-align: center;
+  color: white;
 }
 
-.color{
-    border: solid 1px black;
-    width: 40px;
-    height: 40px;
-    display: inline-block;
+.color {
+  border: solid 1px black;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
 }
 
-#black{
-    text-align: center;
-    background-color: black;
+#black {
+  text-align: center;
+  background-color: black;
 }
 
-#red{
-    background-color: red;
-}
-#blue{
-    background-color: blue;
+#red {
+  background-color: red;
 }
 
-#green{
-    background-color: green;
+#blue {
+  background-color: blue;
 }
 
-.pixel{
-    width: 40px;
-    height: 40px;
-    border: solid 1px black;
-    display: inline-block;
-    background-color: white;
+#green {
+  background-color: green;
 }
 
-.linha{
-    height: 40px;
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: solid 1px black;
+  display: inline-block;
+  background-color: white;
 }
 
+.linha {
+  height: 40px;
+}
