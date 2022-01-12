@@ -27,12 +27,7 @@ function apagarBoard() {
   }
 }
 
-function gerarBoard() {
-  const tamanho = document.getElementById('board-size').value;
-  if (tamanho === '') {
-    return alert('Board inválido!');
-  }
-  apagarBoard();
+function boardPersol(tamanho) {
   const quadro = document.getElementById('pixel-board');
 
   for (let i = 0; i < tamanho; i += 1) {
@@ -45,6 +40,21 @@ function gerarBoard() {
       linha.appendChild(quad);
     }
     quadro.appendChild(linha);
+  }
+}
+
+function gerarBoard() {
+  const tamanho = document.getElementById('board-size').value;
+  if (tamanho === '') {
+    return alert('Board inválido!');
+  }
+  apagarBoard();
+  if (tamanho < 5) {
+    boardPersol(5);
+  } else if (tamanho > 50) {
+    boardPersol(50);
+  } else {
+    boardPersol(tamanho);
   }
 }
 
