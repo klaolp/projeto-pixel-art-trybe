@@ -19,7 +19,7 @@ header , main {
   display: inline-block;
 }
 
-#black {
+/* #black {
   text-align: center;
   background-color: black;
 }
@@ -34,7 +34,7 @@ header , main {
 
 #green {
   background-color: green;
-}
+} */
 
 .pixel {
   width: 40px;

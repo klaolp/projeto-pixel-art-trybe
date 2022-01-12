@@ -15,7 +15,6 @@ function createBoard() {
   }
 }
 
-createBoard();
 // 2.Criação da nova tabela de pixels personalizada.
 // 2.1 Função para apagar tabela original.
 function apagarBoard() {
@@ -63,7 +62,6 @@ function createBoardN() {
   click.addEventListener('click', gerarBoard);
 }
 
-createBoardN();
 // 3.Selecionando cor da paleta de cores
 function selecionarCor() {
   function recebeClick(eventoDeOrigem) {
@@ -80,12 +78,11 @@ function selecionarCor() {
   }
 }
 
-selecionarCor();
 // 4.Adicionar cor selecionada, na paleta de cores, na tabela de pixels.
 function adicionaCor() {
   function clicado(eventoDeOrigem) {
     const quadradinho = (eventoDeOrigem.target);
-    const cor = document.getElementsByClassName('color selected')[0].id;
+    const cor = document.getElementsByClassName('color selected')[0].style.backgroundColor;
     quadradinho.style.backgroundColor = cor;
   }
 
@@ -95,8 +92,6 @@ function adicionaCor() {
     quadradinhos[i].addEventListener('click', clicado);
   }
 }
-
-adicionaCor();
 
 // 5.Função Limpar tabela de pixels
 function limpar() {
@@ -112,4 +107,35 @@ function limpar() {
   cls.addEventListener('click', limparPixels);
 }
 
+function corAleatoria() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+
+  for (let i = 0; i < 6; i += 1) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+function criaPaleta() {
+  const paleta = document.getElementById('color-palette');
+
+  for (let i = 0; i < 4; i += 1) {
+    const cor = document.createElement('div');
+    if (i === 0) {
+      cor.className = 'color selected';
+      cor.style.backgroundColor = 'black';
+    } else {
+      cor.className = 'color';
+      cor.style.backgroundColor = corAleatoria();
+    }
+    paleta.appendChild(cor);
+  }
+}
+
+criaPaleta();
+createBoard();
+createBoardN();
+selecionarCor();
+adicionaCor();
 limpar();
