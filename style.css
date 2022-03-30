@@ -1,10 +1,27 @@
 * {
   margin: 0;
   padding: 0;
+  background-color: #0e0b16;
+  color: #f2f2f2;
 }
 
 header , main {
   text-align: center;
+}
+
+#board-size {
+  color: #262626;
+  background-color: white;
+  width: 80px;
+}
+
+.button {
+  background-color: #4717f6;
+  height: 30px;
+  width: 50px;
+  font-weight: 800;
+  border-radius: 25%;
+  border: none;
 }
 
 #color-palete {
@@ -13,28 +30,11 @@ header , main {
 }
 
 .color {
-  border: solid 1px black;
+  border: solid 2px white;
   width: 40px;
   height: 40px;
   display: inline-block;
 }
-
-/* #black {
-  text-align: center;
-  background-color: black;
-}
-
-#red {
-  background-color: red;
-}
-
-#blue {
-  background-color: blue;
-}
-
-#green {
-  background-color: green;
-} */
 
 .pixel {
   width: 40px;

@@ -1,6 +1,8 @@
+const pixelBoard = 'pixel-board';
+const colorSelected = 'color selected';
 // 1.Criação de tabela de pixels.
 function createBoard() {
-  const quadro = document.getElementById('pixel-board');
+  const quadro = document.getElementById(pixelBoard);
 
   for (let i = 0; i < 5; i += 1) {
     const linha = document.createElement('div');
@@ -27,7 +29,7 @@ function apagarBoard() {
 }
 
 function boardPersol(tamanho) {
-  const quadro = document.getElementById('pixel-board');
+  const quadro = document.getElementById(pixelBoard);
 
   for (let i = 0; i < tamanho; i += 1) {
     const linha = document.createElement('div');
@@ -39,6 +41,21 @@ function boardPersol(tamanho) {
       linha.appendChild(quad);
     }
     quadro.appendChild(linha);
+  }
+}
+
+// 4.Adicionar cor selecionada, na paleta de cores, na tabela de pixels.
+function adicionaCor() {
+  function clicado(eventoDeOrigem) {
+    const quadradinho = (eventoDeOrigem.target);
+    const cor = document.getElementsByClassName(colorSelected)[0].style.backgroundColor;
+    quadradinho.style.backgroundColor = cor;
+  }
+
+  const quadradinhos = document.getElementsByClassName('pixel');
+
+  for (let i = 0; i < quadradinhos.length; i += 1) {
+    quadradinhos[i].addEventListener('click', clicado);
   }
 }
 
@@ -55,6 +72,7 @@ function gerarBoard() {
   } else {
     boardPersol(tamanho);
   }
+  adicionaCor();
 }
 
 function createBoardN() {
@@ -68,28 +86,13 @@ function selecionarCor() {
     const cor = (eventoDeOrigem.target);
     const anterior = document.getElementsByClassName('selected');
     anterior[0].className = 'color';
-    cor.className = 'color selected';
+    cor.className = colorSelected;
   }
 
   const click = document.getElementsByClassName('color');
 
   for (let i = 0; i < click.length; i += 1) {
     click[i].addEventListener('click', recebeClick);
-  }
-}
-
-// 4.Adicionar cor selecionada, na paleta de cores, na tabela de pixels.
-function adicionaCor() {
-  function clicado(eventoDeOrigem) {
-    const quadradinho = (eventoDeOrigem.target);
-    const cor = document.getElementsByClassName('color selected')[0].style.backgroundColor;
-    quadradinho.style.backgroundColor = cor;
-  }
-
-  const quadradinhos = document.getElementsByClassName('pixel');
-
-  for (let i = 0; i < quadradinhos.length; i += 1) {
-    quadradinhos[i].addEventListener('click', clicado);
   }
 }
 
@@ -123,7 +126,7 @@ function criaPaleta() {
   for (let i = 0; i < 4; i += 1) {
     const cor = document.createElement('div');
     if (i === 0) {
-      cor.className = 'color selected';
+      cor.className = colorSelected;
       cor.style.backgroundColor = 'black';
     } else {
       cor.className = 'color';
